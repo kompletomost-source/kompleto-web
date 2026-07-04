@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "image": "https://picsum.photos/seed/kompleto-nabytek1/800/800",
+      "caption": "Montáž kuchyňské linky",
+      "category": "nabytek"
+    },
+    {
+      "image": "https://picsum.photos/seed/kompleto-voda1/800/800",
+      "caption": "Výměna kuchyňské baterie",
+      "category": "voda"
+    },
+    {
+      "image": "https://picsum.photos/seed/kompleto-elektro1/800/800",
+      "caption": "Výměna zásuvky",
+      "category": "elektro"
+    },
+    {
+      "image": "https://picsum.photos/seed/kompleto-malba1/800/800",
+      "caption": "Vymalovaný pokoj",
+      "category": "malba"
+    },
+    {
+      "image": "https://picsum.photos/seed/kompleto-zahrada1/800/800",
+      "caption": "Upravená zahrada",
+      "category": "zahrada"
+    }
+  ]
+}

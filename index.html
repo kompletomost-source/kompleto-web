@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kompleto | Hodinový manžel v Mostě a okolí</title>
+<meta name="description" content="Kompleto – spolehlivý hodinový manžel v Mostě a okolí. Montáž nábytku, drobné instalatérské a elektrikářské práce, malování i údržba zahrady. Zavolejte ještě dnes.">
+<meta name="theme-color" content="#16222E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2316222E'/%3E%3Cpath d='M11 21l6 6 12-14' stroke='%23E8590C' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Kompleto",
+  "description": "Hodinový manžel v Mostě a okolí – montáž nábytku, drobné instalatérské, elektrikářské a malířské práce, údržba zahrad.",
+  "areaServed": "Most, Ústecký kraj, Česká republika",
+  "telephone": "+420607793715",
+  "email": "kompleto.most@gmail.com"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#16222E',
+          ink2: '#1E2E3D',
+          paper: '#FAFAF9',
+          paperAlt: '#F1EFEA',
+          signal: '#E8590C',
+          signalDark: '#C24A08',
+          line: '#E1DED4',
+        },
+        fontFamily: {
+          display: ['Archivo', 'sans-serif'],
+          sans: ['Inter', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  ::selection { background: #E8590C; color: #fff; }
+  :focus-visible { outline: 2px solid #E8590C; outline-offset: 3px; border-radius: 2px; }
+
+  /* Blueprint grid texture used in the hero */
+  .blueprint {
+    background-image:
+      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  /* Corner-bracket "frame" — the site's signature motif.
+     Default: quiet measuring-tape ticks. On hover/focus: they light up orange. */
+  .frame, .frame-invert { position: relative; }
+  .frame::before, .frame::after,
+  .frame-invert::before, .frame-invert::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 16px 2px, 2px 16px, 16px 2px, 2px 16px, 16px 2px, 2px 16px, 16px 2px, 2px 16px;
+    background-position: top left, top left, top right, top right, bottom right, bottom right, bottom left, bottom left;
+  }
+  .frame::before {
+    background-image: linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3), linear-gradient(#C9C3B3,#C9C3B3);
+  }
+  .frame-invert::before {
+    background-image: linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)), linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25));
+  }
+  .frame::after, .frame-invert::after {
+    opacity: 0;
+    transition: opacity .25s ease;
+    background-image: linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C), linear-gradient(#E8590C,#E8590C);
+  }
+  .frame:hover::after, .frame:focus-within::after,
+  .frame-invert:hover::after, .frame-invert:focus-within::after { opacity: 1; }
+
+  /* Gallery filter buttons */
+  .gallery-filter { color: #16222E; background: transparent; }
+  .gallery-filter.is-active { background: #16222E; color: #FAFAF9; border-color: #16222E; }
+  .gallery-item.is-hidden { display: none; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body class="font-sans bg-paper text-ink antialiased">
+
+<a href="#hlavni-obsah" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:text-sm">Přeskočit na hlavní obsah</a>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
+  <div class="mx-auto max-w-6xl px-6 sm:px-8">
+    <div class="flex h-20 items-center justify-between">
+
+      <a href="#top" class="flex shrink-0 items-center gap-3">
+        <svg viewBox="0 0 40 40" class="h-10 w-10" aria-hidden="true" focusable="false">
+          <rect width="40" height="40" rx="10" fill="#16222E"/>
+          <path d="M11 21l6 6 12-14" stroke="#E8590C" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="flex flex-col leading-none">
+          <span class="font-display text-lg font-black tracking-tight">KOMPLETO</span>
+          <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">hodinový manžel</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-10 font-mono text-xs uppercase tracking-[0.15em] text-ink/80 md:flex" aria-label="Hlavní navigace">
+        <a href="#sluzby" class="transition-colors hover:text-signal">Služby</a>
+        <a href="#galerie" class="transition-colors hover:text-signal">Galerie</a>
+        <a href="#proc-my" class="transition-colors hover:text-signal">Proč my</a>
+        <a href="#kontakt" class="transition-colors hover:text-signal">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="tel:+420607793715" class="inline-flex items-center gap-2 rounded-full bg-signal py-2.5 pl-3 pr-3 font-mono text-xs text-white transition-colors hover:bg-signalDark sm:pr-5 sm:text-sm">
+          <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 6a2 2 0 0 1 1-2Z"/></svg>
+          <span class="hidden sm:inline">+420 607 793 715</span>
+        </a>
+
+        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Otevřít menu" class="p-2 text-ink md:hidden">
+          <svg id="icon-open" viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="icon-close" viewBox="0 0 24 24" class="hidden h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-line md:hidden">
+      <div class="flex flex-col gap-1 py-4 font-mono text-sm uppercase tracking-wider">
+        <a href="#sluzby" class="rounded-md px-2 py-3 hover:bg-paperAlt">Služby</a>
+        <a href="#galerie" class="rounded-md px-2 py-3 hover:bg-paperAlt">Galerie</a>
+        <a href="#proc-my" class="rounded-md px-2 py-3 hover:bg-paperAlt">Proč my</a>
+        <a href="#kontakt" class="rounded-md px-2 py-3 hover:bg-paperAlt">Kontakt</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="hlavni-obsah">
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="relative overflow-hidden bg-ink text-paper">
+    <div class="blueprint absolute inset-0" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ink/30 to-ink" aria-hidden="true"></div>
+
+    <div class="relative mx-auto max-w-6xl px-6 py-24 sm:px-8 md:py-32">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-signal">
+          <span class="h-1.5 w-1.5 rounded-full bg-signal"></span>
+          Most a okolí · k dispozici celý týden
+        </span>
+
+        <h1 class="mt-6 font-display text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+          Váš spolehlivý <span class="text-signal">hodinový manžel</span> v Mostě.
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+          Od kapajícího kohoutku po smontovaný nábytek – jedno zavolání a máte vyhráno. Pracujeme rychle, čistě a s vlastním nářadím po celém Mostě a okolí.
+        </p>
+
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="#kontakt" class="inline-flex items-center justify-center rounded-full bg-signal px-7 py-3.5 font-mono text-sm uppercase tracking-wider text-white transition-colors hover:bg-signalDark">
+            Nezávazná poptávka
+          </a>
+          <a href="tel:+420607793715" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 font-mono text-sm uppercase tracking-wider text-white transition-colors hover:border-white/60">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 6a2 2 0 0 1 1-2Z"/></svg>
+            +420 607 793 715
+          </a>
+        </div>
+
+        <div class="mt-16 grid max-w-lg grid-cols-3 divide-x divide-white/10">
+          <div class="pr-4 sm:pr-6">
+            <p class="font-display text-2xl font-extrabold sm:text-3xl">10+</p>
+            <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 sm:text-xs">Let praxe</p>
+          </div>
+          <div class="px-4 sm:px-6">
+            <p class="font-display text-2xl font-extrabold sm:text-3xl">500+</p>
+            <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 sm:text-xs">Spokojených zákazníků</p>
+          </div>
+          <div class="pl-4 sm:pl-6">
+            <p class="font-display text-2xl font-extrabold sm:text-3xl">24 h</p>
+            <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 sm:text-xs">Reakční doba</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="sluzby" class="py-24 md:py-32">
+    <div class="mx-auto max-w-6xl px-6 sm:px-8">
+      <div class="reveal max-w-2xl">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-signal">Naše služby</span>
+        <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Jedna firma, kompletní řešení domácnosti</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">Vyberte si z běžných kategorií, nebo nám prostě popište problém – poradíme si i s kombinací více oprav najednou.</p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Card 1: Nábytek -->
+        <div class="reveal frame bg-paperAlt p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:0ms">
+          <span class="inline-block rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Montáž</span>
+          <div class="mt-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-ink">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2 2.1-2.1Z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-bold">Montáž a opravy nábytku</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Sestavíme nový nábytek z krabice nebo opravíme rozviklanou židli či skříň, aby zase pevně držela.</p>
+          <p class="mt-4 text-xs text-slate-500">IKEA nábytek · Kuchyňské linky · Panty a úchyty</p>
+        </div>
+
+        <!-- Card 2: Vrtání -->
+        <div class="reveal frame bg-paperAlt p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:80ms">
+          <span class="inline-block rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Vrtání</span>
+          <div class="mt-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-ink">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h9v4H3z"/><path d="M12 11h4l3-2v6l-3-2h-4"/><path d="M7 14v3"/></svg>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-bold">Vrtání a montáž na zeď</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Pověsíme poličky, obrazy, televizi nebo garnýže rovně, pevně a přesně tam, kam patří.</p>
+          <p class="mt-4 text-xs text-slate-500">TV držáky · Police · Garnýže · Zrcadla</p>
+        </div>
+
+        <!-- Card 3: Voda -->
+        <div class="reveal frame bg-paperAlt p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:160ms">
+          <span class="inline-block rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Voda</span>
+          <div class="mt-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-ink">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h6v3a4 4 0 0 0 4 4h1"/><path d="M16 9v2"/><path d="M12 15c0 2.2-1.8 4-4 4s-4-1.8-4-4c0-2 4-6 4-6s4 4 4 6Z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-bold">Drobné instalatérské práce</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Utáhneme kapající kohoutek, vyměníme těsnění nebo opravíme splachování na záchodě.</p>
+          <p class="mt-4 text-xs text-slate-500">Kohoutky a baterie · Sifony · WC · Těsnění</p>
+        </div>
+
+        <!-- Card 4: Elektro -->
+        <div class="reveal frame bg-paperAlt p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:0ms">
+          <span class="inline-block rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Elektro</span>
+          <div class="mt-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-ink">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 4 14h6l-1 7 9-11h-6l1-7Z"/></svg>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-bold">Základní elektrikářské práce</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Vyměníme zásuvky, vypínače a svítidla nebo připojíme nový spotřebič podle platných norem.</p>
+          <p class="mt-4 text-xs text-slate-500">Zásuvky a vypínače · Svítidla · Jističe</p>
+        </div>
+
+        <!-- Card 5: Malba -->
+        <div class="reveal frame bg-paperAlt p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:80ms">
+          <span class="inline-block rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Malba</span>
+          <div class="mt-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-ink">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="12" height="5" rx="1.5"/><path d="M9 9v3"/><path d="M6 12h6a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2H6"/></svg>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-bold">Malování a drobné zednické práce</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Vymalujeme místnost, opravíme omítku nebo zatmelíme praskliny ve zdi.</p>
+          <p class="mt-4 text-xs text-slate-500">Malování interiérů · Štukování · Spárování</p>
+        </div>
+
+        <!-- Card 6: Zahrada -->
+        <div class="reveal frame bg-paperAlt p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:160ms">
+          <span class="inline-block rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Zahrada</span>
+          <div class="mt-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white text-ink">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c8 0 14-5 15-16C10 5 4 10 4 20Z"/><path d="M4 20c4-4 7-8 11-13"/></svg>
+          </div>
+          <h3 class="mt-4 font-display text-lg font-bold">Údržba zahrady a venkovních prostor</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Posekáme trávník, ořežeme keře nebo uklidíme zahradu tak, aby zase žila.</p>
+          <p class="mt-4 text-xs text-slate-500">Sekání trávy · Stříhání keřů · Úklid zahrady</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY US ============ -->
+  <section id="proc-my" class="bg-ink py-24 text-paper md:py-32">
+    <div class="mx-auto max-w-6xl px-6 sm:px-8">
+      <div class="reveal max-w-2xl">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-signal">Proč Kompleto</span>
+        <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Řemeslo, na které se můžete spolehnout</h2>
+        <p class="mt-4 leading-relaxed text-slate-300">Za jménem Kompleto stojí jednoduchý slib: přijedeme, opravíme a uklidíme po sobě.</p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal border-t-2 border-signal pt-6" style="transition-delay:0ms">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="10" rx="1.5"/><path d="M8 9V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><path d="M3 13h18"/></svg>
+          <h3 class="mt-4 font-display text-base font-bold">Profesionální nářadí</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-300">Na každou zakázku přijíždíme plně vybaveni, takže opravu zvládneme napoprvé a pořádně.</p>
+        </div>
+        <div class="reveal border-t-2 border-signal pt-6" style="transition-delay:80ms">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <h3 class="mt-4 font-display text-base font-bold">Přesný příchod</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-300">Domluvený termín dodržujeme na minutu přesně – váš čas je pro nás stejně cenný jako ten náš.</p>
+        </div>
+        <div class="reveal border-t-2 border-signal pt-6" style="transition-delay:160ms">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3 6 11"/><path d="M6 11 3 21l6-3 5-5"/><path d="M14 3l4 4-8 8-4-4Z"/></svg>
+          <h3 class="mt-4 font-display text-base font-bold">Úklid po sobě</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-300">Po dokončení práce po sobě vždy uklidíme. Odcházíme až ve chvíli, kdy je vše tak, jak má být.</p>
+        </div>
+        <div class="reveal border-t-2 border-signal pt-6" style="transition-delay:240ms">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3 class="mt-4 font-display text-base font-bold">Zvládneme cokoliv</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-300">Ať je problém sebevíc neobvyklý, najdeme řešení. A pokud náhodou ne, řekneme vám to rovnou a férově.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="galerie" class="py-24 md:py-32">
+    <div class="mx-auto max-w-6xl px-6 sm:px-8">
+      <div class="reveal max-w-2xl">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-signal">Galerie</span>
+        <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Ukázky z naší práce</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">Výběr z dokončených zakázek v Mostě a okolí. Klikněte na fotografii pro zvětšení.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="reveal mt-10 flex flex-wrap gap-2" role="tablist" aria-label="Filtr galerie">
+        <button type="button" data-filter="all" class="gallery-filter is-active rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors">Vše</button>
+        <button type="button" data-filter="nabytek" class="gallery-filter rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors">Nábytek</button>
+        <button type="button" data-filter="voda" class="gallery-filter rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors">Voda</button>
+        <button type="button" data-filter="elektro" class="gallery-filter rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors">Elektro</button>
+        <button type="button" data-filter="malba" class="gallery-filter rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors">Malba</button>
+        <button type="button" data-filter="zahrada" class="gallery-filter rounded-full border border-ink/15 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors">Zahrada</button>
+      </div>
+
+      <!-- Fotky se načítají automaticky ze souboru data/gallery.json (spravuje se přes /admin) -->
+      <div id="gallery-grid" class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <p id="gallery-empty" class="col-span-full text-sm text-slate-500">Galerie se načítá…</p>
+      </div>
+
+      <template id="gallery-item-template">
+        <button type="button" class="gallery-item reveal frame group relative aspect-square overflow-hidden bg-paperAlt">
+          <img loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
+          <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-3 text-left font-mono text-[10px] uppercase tracking-[0.12em] text-white opacity-0 transition group-hover:opacity-100"></span>
+        </button>
+      </template>
+
+    </div>
+  </section>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center bg-ink/95 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Zvětšená fotografie">
+    <button type="button" id="lightbox-close" aria-label="Zavřít" class="absolute right-4 top-4 rounded-full p-2 text-white/80 transition-colors hover:text-signal sm:right-8 sm:top-8">
+      <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button type="button" id="lightbox-prev" aria-label="Předchozí fotografie" class="absolute left-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white/80 transition-colors hover:text-signal sm:left-6">
+      <svg viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button type="button" id="lightbox-next" aria-label="Další fotografie" class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-2 text-white/80 transition-colors hover:text-signal sm:right-6">
+      <svg viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <figure class="max-h-full max-w-3xl">
+      <img id="lightbox-img" src="" alt="" class="max-h-[75vh] w-full rounded-lg object-contain">
+      <figcaption id="lightbox-caption" class="mt-4 text-center font-mono text-xs uppercase tracking-[0.12em] text-slate-300"></figcaption>
+    </figure>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="kontakt" class="py-24 md:py-32">
+    <div class="mx-auto max-w-6xl px-6 sm:px-8">
+      <div class="reveal max-w-2xl">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-signal">Kontakt</span>
+        <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Domluvme se na opravě</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">Napište nám pár vět o tom, co je potřeba udělat, nebo prostě zavolejte. Ozveme se zpět nejpozději do 24 hodin.</p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-5">
+
+        <!-- Info panel -->
+        <div class="reveal frame-invert bg-ink p-8 text-paper sm:p-10 lg:col-span-2">
+          <ul class="space-y-7">
+            <li class="flex gap-4">
+              <svg viewBox="0 0 24 24" class="mt-1 h-5 w-5 shrink-0 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 6a2 2 0 0 1 1-2Z"/></svg>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-slate-400">Telefon</p>
+                <a href="tel:+420607793715" class="mt-1 block font-display font-semibold transition-colors hover:text-signal">+420 607 793 715</a>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <svg viewBox="0 0 24 24" class="mt-1 h-5 w-5 shrink-0 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-slate-400">E-mail</p>
+                <a href="mailto:kompleto.most@gmail.com" class="mt-1 block font-display font-semibold transition-colors hover:text-signal">kompleto.most@gmail.com</a>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <svg viewBox="0 0 24 24" class="mt-1 h-5 w-5 shrink-0 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-slate-400">Působnost</p>
+                <p class="mt-1 text-sm leading-relaxed text-slate-300">Most a okolí – Litvínov, Meziboří, Braňany, Obrnice a další.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <svg viewBox="0 0 24 24" class="mt-1 h-5 w-5 shrink-0 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-slate-400">Termín</p>
+                <p class="mt-1 text-sm leading-relaxed text-slate-300">Vždy dle dohody</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Form panel -->
+        <div class="reveal frame bg-paperAlt p-8 sm:p-10 lg:col-span-3">
+          <form id="contact-form" class="form-fields space-y-5" action="https://formspree.io/f/mojoyorb" method="POST">
+            <div>
+              <label for="jmeno" class="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Jméno a příjmení</label>
+              <input id="jmeno" name="jmeno" type="text" required class="w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 transition focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/20" placeholder="Jan Novák">
+            </div>
+            <div>
+              <label for="kontakt-udaj" class="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Telefon nebo e-mail</label>
+              <input id="kontakt-udaj" name="kontakt" type="text" required class="w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 transition focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/20" placeholder="+420 777 000 000">
+            </div>
+            <div>
+              <label for="zprava" class="mb-2 block font-mono text-[10px] uppercase tracking-[0.15em] text-slate-600">Co je potřeba opravit?</label>
+              <textarea id="zprava" name="zprava" rows="4" required class="w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-sm text-ink placeholder:text-slate-400 transition focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/20" placeholder="Popište zakázku…"></textarea>
+            </div>
+            <button type="submit" class="w-full rounded-full bg-signal px-7 py-3.5 font-mono text-sm uppercase tracking-wider text-white transition-colors hover:bg-signalDark">Odeslat poptávku</button>
+            <p class="text-center text-xs text-slate-500">Odesláním souhlasíte, že vás budeme kontaktovat ohledně vaší poptávky.</p>
+          </form>
+
+          <div class="form-success hidden py-6 text-center">
+            <svg viewBox="0 0 24 24" class="mx-auto h-12 w-12 text-signal" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+            <h3 class="mt-4 font-display text-lg font-bold">Poptávka odeslána</h3>
+            <p class="mt-2 text-sm text-slate-600">Děkujeme! Ozveme se vám nejpozději do 24 hodin na uvedený kontakt.</p>
+            <button type="button" id="reset-form" class="mt-5 font-mono text-xs uppercase tracking-wider text-signal hover:text-signalDark">Odeslat další poptávku</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-slate-400">
+  <div class="mx-auto max-w-6xl px-6 py-10 sm:px-8">
+    <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+      <a href="#top" class="flex items-center gap-3">
+        <svg viewBox="0 0 40 40" class="h-8 w-8" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="10" fill="#FAFAF9"/><path d="M11 21l6 6 12-14" stroke="#E8590C" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="font-display text-base font-black tracking-tight text-paper">KOMPLETO</span>
+      </a>
+
+      <nav class="flex gap-6 font-mono text-xs uppercase tracking-wider" aria-label="Patička">
+        <a href="#sluzby" class="transition-colors hover:text-paper">Služby</a>
+        <a href="#galerie" class="transition-colors hover:text-paper">Galerie</a>
+        <a href="#proc-my" class="transition-colors hover:text-paper">Proč my</a>
+        <a href="#kontakt" class="transition-colors hover:text-paper">Kontakt</a>
+      </nav>
+    </div>
+
+    <div class="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row">
+      <p>© <span id="year"></span> Kompleto. Všechna práva vyhrazena.</p>
+      <p>Hodinový manžel pro Most a okolí.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  (function () {
+    var btn = document.getElementById('menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    var iconOpen = document.getElementById('icon-open');
+    var iconClose = document.getElementById('icon-close');
+
+    function closeMenu() {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+  })();
+
+  // Scroll reveal animations
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Contact form (front-end only demo submission)
+  (function () {
+    var form = document.getElementById('contact-form');
+    var success = document.querySelector('.form-success');
+    var resetBtn = document.getElementById('reset-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Odesílám…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+        } else {
+          alert('Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo nám zavolejte.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }).catch(function () {
+        alert('Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo nám zavolejte.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        form.reset();
+        success.classList.add('hidden');
+        form.classList.remove('hidden');
+      });
+    }
+  })();
+
+  // Gallery: loads photos from data/gallery.json (edit via /admin CMS), filter + lightbox
+  (function () {
+    var grid = document.getElementById('gallery-grid');
+    var emptyMsg = document.getElementById('gallery-empty');
+    var template = document.getElementById('gallery-item-template');
+    if (!grid || !template) return;
+
+    var CATEGORY_LABELS = {
+      nabytek: 'Montáž nábytku',
+      voda: 'Instalatérské práce',
+      elektro: 'Elektrikářské práce',
+      malba: 'Malování a zednické práce',
+      zahrada: 'Údržba zahrady'
+    };
+
+    var items = [];
+    var filterBtns = document.querySelectorAll('.gallery-filter');
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxCaption = document.getElementById('lightbox-caption');
+    var closeBtn = document.getElementById('lightbox-close');
+    var prevBtn = document.getElementById('lightbox-prev');
+    var nextBtn = document.getElementById('lightbox-next');
+    var currentIndex = 0;
+
+    function visibleItems() {
+      return items.filter(function (item) { return !item.classList.contains('is-hidden'); });
+    }
+
+    function openLightbox(item) {
+      var visible = visibleItems();
+      currentIndex = visible.indexOf(item);
+      showCurrent(visible);
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showCurrent(visible) {
+      var item = visible[currentIndex];
+      if (!item) return;
+      var img = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = img.alt;
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function step(dir) {
+      var visible = visibleItems();
+      currentIndex = (currentIndex + dir + visible.length) % visible.length;
+      showCurrent(visible);
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', function () { step(-1); });
+    nextBtn.addEventListener('click', function () { step(1); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var cat = btn.getAttribute('data-filter');
+        items.forEach(function (item) {
+          var show = cat === 'all' || item.getAttribute('data-cat') === cat;
+          item.classList.toggle('is-hidden', !show);
+        });
+      });
+    });
+
+    function renderItems(data) {
+      var list = (data && data.items) || [];
+      if (!list.length) {
+        emptyMsg.textContent = 'Zatím tu nejsou žádné fotky. Přidejte je přes /admin.';
+        return;
+      }
+      emptyMsg.remove();
+
+      list.forEach(function (entry, i) {
+        var node = template.content.cloneNode(true);
+        var btn = node.querySelector('.gallery-item');
+        var img = node.querySelector('img');
+        var caption = node.querySelector('span');
+
+        btn.setAttribute('data-cat', entry.category || '');
+        btn.style.transitionDelay = (i % 4) * 40 + 'ms';
+        img.src = entry.image;
+        img.alt = entry.caption || CATEGORY_LABELS[entry.category] || 'Fotografie z realizace';
+        caption.textContent = entry.caption || CATEGORY_LABELS[entry.category] || '';
+
+        btn.addEventListener('click', function () { openLightbox(btn); });
+        grid.appendChild(node);
+      });
+
+      items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+
+      // Re-run scroll reveal for newly added items
+      if ('IntersectionObserver' in window) {
+        var io2 = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io2.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        items.forEach(function (el) { io2.observe(el); });
+      } else {
+        items.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    }
+
+    fetch('data/gallery.json', { cache: 'no-store' })
+      .then(function (res) { return res.json(); })
+      .then(renderItems)
+      .catch(function () {
+        emptyMsg.textContent = 'Galerii se nepodařilo načíst.';
+      });
+  })();
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function () {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

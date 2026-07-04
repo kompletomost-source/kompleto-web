@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: "images/gallery"
+public_folder: "images/gallery"
+
+collections:
+  - name: "gallery"
+    label: "Galerie prací"
+    files:
+      - file: "data/gallery.json"
+        label: "Fotky v galerii"
+        name: "gallery"
+        fields:
+          - label: "Fotografie"
+            name: "items"
+            widget: "list"
+            label_singular: "fotografie"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Obrázek", name: "image", widget: "image" }
+              - { label: "Popisek", name: "caption", widget: "string" }
+              - label: "Kategorie"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Nábytek", value: "nabytek" }
+                  - { label: "Voda", value: "voda" }
+                  - { label: "Elektro", value: "elektro" }
+                  - { label: "Malba", value: "malba" }
+                  - { label: "Zahrada", value: "zahrada" }
