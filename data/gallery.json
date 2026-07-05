@@ -1,3 +1,9 @@
 {
-  "items": []
+  "items": [
+    {
+      "image": "images/gallery/fotky-pripravujeme.png",
+      "caption": "Fotky připravujeme",
+      "category": "nabytek"
+    }
+  ]
 }
